@@ -1,20 +1,13 @@
-#import random
-
-""" picks = random.choices(range(ord('a'),ord('z')), k=8)
-print(picks)
-pick = [chr(i) for i in picks]
-print(''.join(pick)) """
-""" for i in range(5):  # We only care about repeating 5 times, not the index
-    print("Hello!")
- """
-
 import random
 import string
 
 all_chars = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
+print(all_chars)
+print(len(all_chars))
 
-# password length
+# password length (minimum of 8 and maximum of 15)
 pwl = random.randint(8,15)
+print(pwl)
 
 # random select characters
 pwc = random.choices(all_chars, k = pwl)
@@ -46,8 +39,6 @@ if pw_len >= 8 and pw_len <= 15:
         password = "".join(random.choices(all_chars, k=pw_len))
         print(f"Password {i+1}: {password}")
     
-
-
 else:
    # Handle invalid input
    print("Error: Password length must be between 8 and 15")
@@ -73,6 +64,4 @@ elif length >= 12 and has_number and has_upper and has_symbol:
      print(f"Your password '{pws}' is Strong (Great job! This is a secure password).")
 else:
     print(f"Your password {pws} is strong")
-
-
 
