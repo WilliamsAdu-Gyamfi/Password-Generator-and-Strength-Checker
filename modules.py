@@ -13,7 +13,7 @@ print(f"Generated Password: {auto_password}")
 user_choice = input("Are you okay with this password? (yes/no): ").lower()
 
 if user_choice == "yes":
-    print(f"Great! Your password ({auto_password}) is ready to use. Stay safe online")
+    print(f"Great! Your password {auto_password}' is ready to use. Stay safe online")
 else:
     # Ask the user to input their own password
    # user_password = input("Enter your own password to check its strength: ")
@@ -31,13 +31,16 @@ else:
         # Give feedback
         # print("Password Strength Check:")
          if length < 8 or not (has_number or has_upper or has_symbol):
-            print(f"Your password ({user_password}) is weak. Try including numbers, symbols, and uppercase letters.")
+            print(f"Your password '{user_password}' is weak. Try including numbers, symbols, and uppercase letters.")
+            print(f"A new password is needed since '{user_password}' was weak")
+            
          elif 8 <= length <= 11 and sum([has_number, has_upper, has_symbol]) >= 2:
-            print(f"Your password ({user_password}) is moderate. Consider making it longer or more complex.")
+            print(f"Your password '{user_password}' is moderate. Consider making it longer or more complex.")
             break
          elif length >= 12 and has_number and has_upper and has_symbol:
-            print(f"Your password ({user_password}) is strong. Great choice!")
+            print(f"Your password '{user_password}' is strong. Great choice!")
             break
          else:
-            print(f"Your password ({user_password}) is acceptable but NOT Strong!.")
-            break
+            print(f"Your password '{user_password}' is acceptable but NOT Strong!.")
+            break 
+   
